@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\bibon\\Desktop\\FireQuiz\\",
+  "WorkspaceRootPath": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|c:\\users\\bibon\\desktop\\firequiz\\firequiz\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\FireQuiz\\firequiz\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\FireQuiz\\firequiz\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\FireQuiz\\firequiz\\questionlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\firequiz\\questionlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\questionlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\FireQuiz\\firequiz\\quizlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\quizlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\firequiz\\createquizpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\createquizpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\firequiz\\createquizpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\createquizpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\firequiz\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\firequiz\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,58 +35,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "QuizListPage.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\FireQuiz\\FireQuiz\\QuizListPage.xaml",
-              "RelativeDocumentMoniker": "FireQuiz\\QuizListPage.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\FireQuiz\\FireQuiz\\QuizListPage.xaml",
-              "RelativeToolTip": "FireQuiz\\QuizListPage.xaml",
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "FireQuiz\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\LoginPage.xaml",
+              "RelativeToolTip": "FireQuiz\\LoginPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-03T05:20:59.362Z"
+              "WhenOpened": "2025-03-17T07:28:33.913Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "QuestionListPage.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\FireQuiz\\FireQuiz\\QuestionListPage.xaml",
-              "RelativeDocumentMoniker": "FireQuiz\\QuestionListPage.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\FireQuiz\\FireQuiz\\QuestionListPage.xaml",
-              "RelativeToolTip": "FireQuiz\\QuestionListPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-03T05:20:56.648Z"
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "FireQuiz\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\LoginPage.xaml.cs",
+              "RelativeToolTip": "FireQuiz\\LoginPage.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:32:53.392Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LoginPage.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\FireQuiz\\FireQuiz\\LoginPage.xaml",
-              "RelativeDocumentMoniker": "FireQuiz\\LoginPage.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\FireQuiz\\FireQuiz\\LoginPage.xaml",
-              "RelativeToolTip": "FireQuiz\\LoginPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-17T07:28:33.913Z"
+              "Title": "CreateQuizPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\CreateQuizPage.xaml.cs",
+              "RelativeDocumentMoniker": "FireQuiz\\CreateQuizPage.xaml.cs",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\CreateQuizPage.xaml.cs",
+              "RelativeToolTip": "FireQuiz\\CreateQuizPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T11:25:19.147Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\FireQuiz\\FireQuiz\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "FireQuiz\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\FireQuiz\\FireQuiz\\MainWindow.xaml",
-              "RelativeToolTip": "FireQuiz\\MainWindow.xaml",
+              "Title": "CreateQuizPage.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\CreateQuizPage.xaml",
+              "RelativeDocumentMoniker": "FireQuiz\\CreateQuizPage.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\CreateQuizPage.xaml",
+              "RelativeToolTip": "FireQuiz\\CreateQuizPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-17T07:37:01.22Z"
+              "WhenOpened": "2025-04-03T11:25:21.451Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoginPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\FireQuiz\\FireQuiz\\LoginPage.xaml.cs",
-              "RelativeDocumentMoniker": "FireQuiz\\LoginPage.xaml.cs",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\FireQuiz\\FireQuiz\\LoginPage.xaml.cs",
-              "RelativeToolTip": "FireQuiz\\LoginPage.xaml.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAmwIQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T07:32:53.392Z",
+              "Title": "QuestionListPage.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\QuestionListPage.xaml",
+              "RelativeDocumentMoniker": "FireQuiz\\QuestionListPage.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\QuestionListPage.xaml",
+              "RelativeToolTip": "FireQuiz\\QuestionListPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-03T05:20:56.648Z",
               "EditorCaption": ""
             }
           ]

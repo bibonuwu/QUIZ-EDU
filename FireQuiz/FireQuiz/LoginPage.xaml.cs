@@ -10,7 +10,7 @@ namespace FireQuiz
 {
     public partial class LoginPage : Page
     {
-        private const string BaseGitHubUrl = "https://raw.githubusercontent.com/bibonuwu/TEST_QSTEM/refs/heads/main/";
+        private const string BaseGitHubUrl = "https://raw.githubusercontent.com/bibonuwu/QUIZ-EDU/refs/heads/main/";
         private readonly Dictionary<string, List<string>> subjectCodes = new Dictionary<string, List<string>>();
 
         public LoginPage()
