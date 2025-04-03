@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bibon\\Desktop\\TestApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|c:\\users\\bibon\\desktop\\testapp\\testapp\\statswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\statswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|c:\\users\\bibon\\desktop\\testapp\\testapp\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|c:\\users\\bibon\\desktop\\testapp\\testapp\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|c:\\users\\bibon\\desktop\\testapp\\testapp\\statswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\statswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|c:\\users\\bibon\\desktop\\testapp\\testapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|c:\\users\\bibon\\desktop\\testapp\\testapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "TestApp\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\MainWindow.xaml.cs",
+              "RelativeToolTip": "TestApp\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAqwHsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T20:02:26.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "TestApp\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\MainWindow.xaml",
+              "RelativeToolTip": "TestApp\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-03T19:59:48.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StatsWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\StatsWindow.xaml.cs",
+              "RelativeDocumentMoniker": "TestApp\\StatsWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\StatsWindow.xaml.cs",
+              "RelativeToolTip": "TestApp\\StatsWindow.xaml.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAhwLAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T19:58:13.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "TestApp\\LoginWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "TestApp\\LoginWindow.xaml.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAhwD4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T19:58:05.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "TestApp\\LoginWindow.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\LoginWindow.xaml",
+              "RelativeToolTip": "TestApp\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-03T19:53:29.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StatsWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\StatsWindow.xaml",
+              "RelativeDocumentMoniker": "TestApp\\StatsWindow.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\TestApp\\TestApp\\StatsWindow.xaml",
+              "RelativeToolTip": "TestApp\\StatsWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-03T18:44:18.096Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+﻿<Window x:Class="TestApp.Calculator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestApp"
+        mc:Ignorable="d"
+        Title="Calculator" 
+        Height="500" 
+        Width="350"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"
+ AllowsTransparency="True"
+ WindowState="Normal" Background="{x:Null}">
+    <Border CornerRadius="10" Background="{DynamicResource PrimaryBackgroundColor}">
+        <Grid>
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
+                <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
+               
+                <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
+            </StackPanel>
+            <Label FontFamily="{StaticResource MontserratMedium}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0">
+                Есептегіш құрал
+            </Label>
+            
+            <Grid Margin="0,30,0,0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Margin="10, 10, 10, 0" Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="20,20,20,20">
+                        <ScrollViewer x:Name="ExpressionScrollViewer" 
+       VerticalScrollBarVisibility="Disabled"
+       HorizontalScrollBarVisibility="Auto">
+                        <TextBox x:Name="ExpressionTextBox"
+                 Grid.Row="0"
+                 FontSize="36"
+                 IsReadOnly="True"
+                 VerticalContentAlignment="Center"
+                 HorizontalContentAlignment="Right"
+                 Foreground="Black"
+                 BorderThickness="0"
+                                  FontFamily="{StaticResource MontserratMedium}"
+                 Margin="10" Background="{x:Null}" />
+
+
+                    </ScrollViewer>
+                    </Border>
+
+                    <Grid Grid.Row="1" Margin="5,5,5,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Button x:Name="PercentButton" Grid.Row="0" Grid.Column="2" FontSize="32" Content="%" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF4E505F" FontWeight="Normal" />
+
+                        <Button x:Name="ClearButton" Grid.Row="0" Grid.Column="0" FontSize="32" Content="C" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF4E505F" FontWeight="Normal" />
+                        <Button x:Name="BackspaceButton" Grid.Row="5" Grid.Column="2" FontSize="25" Content="⌫" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38"/>
+                        <Button x:Name="DivideButton" Grid.Row="0" Grid.Column="3" FontSize="32" Content="÷" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5"/>
+                        <Button x:Name="D7Button" Grid.Row="1" Grid.Column="0" FontSize="32" Content="7" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal"/>
+                        <Button x:Name="D8Button" Grid.Row="1" Grid.Column="1" FontSize="32" Content="8" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal" Cursor=""/>
+                        <Button x:Name="D9Button" Grid.Row="1" Grid.Column="2" FontSize="32" Content="9" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal"/>
+                        <Button x:Name="MultiplyButton" Grid.Row="1" Grid.Column="3" FontSize="32" Content="×" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" FontWeight="Normal"/>
+                        <Button x:Name="D4Button" Grid.Row="2" Grid.Column="0" FontSize="32" Content="4" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal"/>
+                        <Button x:Name="D5Button" Grid.Row="2" Grid.Column="1" FontSize="32" Content="5" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal"/>
+                        <Button x:Name="D6Button" Grid.Row="2" Grid.Column="2" FontSize="32" Content="6" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal"/>
+                        <Button x:Name="SubtractButton" Grid.Row="2" Grid.Column="3" FontSize="32" Content="-" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" FontWeight="Normal"/>
+                        <Button x:Name="D1Button" Grid.Row="3" Grid.Column="0" FontSize="32" Content="1" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal"/>
+                        <Button x:Name="D2Button" Grid.Row="3" Grid.Column="1" FontSize="32" Content="2" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal"/>
+                        <Button x:Name="D3Button" Grid.Row="3" Grid.Column="2" FontSize="32" Content="3" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal" Cursor=""/>
+                        <Button x:Name="AddButton" Grid.Row="3" Grid.Column="3" FontSize="32" Content="+" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" FontWeight="Normal"/>
+                        <Button x:Name="PlusMinusButton" Grid.Row="0" Grid.Column="1" FontSize="32" Content="±" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF4E505F" FontWeight="Normal"/>
+                        <Button x:Name="D0Button" Grid.Row="5" Grid.Column="0" FontSize="32" Content="0" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal"/>
+                        <Button x:Name="DecimalSeparatorButton" Grid.Row="5" Grid.Column="1" FontSize="32" Content="." Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" Background="#FF2E2F38" FontWeight="Normal"/>
+                        <Button x:Name="CalculateButton" Grid.Row="5" Grid.Column="3" FontSize="32" Content="=" Style="{StaticResource BlueRoundedButton}" Margin="5,5,5,5" FontWeight="Normal"/>
+                    </Grid>
+                </Grid>
+           
+         
+        </Grid>
+      
+    </Border>
+
+
+
+   
+          
+</Window>
