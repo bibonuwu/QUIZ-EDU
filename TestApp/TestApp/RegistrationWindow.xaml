@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestApp"
         mc:Ignorable="d"
+               MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Title="RegistrationWindow" Height="619" Width="870"
+           Opacity="0"
+        Closing="Window_Closing"
+
+        Loaded="Window_Loaded"
  WindowStartupLocation="CenterScreen" WindowStyle="None"
  Background="Transparent" AllowsTransparency="True"
  ResizeMode="NoResize" WindowState="Normal">

@@ -6,6 +6,12 @@
         xmlns:local="clr-namespace:TestApp"
         mc:Ignorable="d"
         Title="Calculator" 
+        
+             Opacity="0"
+    Closing="Window_Closing"
+
+    Loaded="Window_Loaded"
+        
         Height="500" 
         Width="350"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"

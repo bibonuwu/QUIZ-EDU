@@ -13,11 +13,37 @@ namespace TestApp
         private const double MaxScale = 3.0;
         private static readonly Duration AnimationDuration = TimeSpan.FromSeconds(0.2);
         private static readonly IEasingFunction Easing = new CubicEase { EasingMode = EasingMode.EaseOut };
+        private bool _isClosingAnimationCompleted = false;
 
         public Periodic()
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation fadeInAnimation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(0.5));
+            BeginAnimation(OpacityProperty, fadeInAnimation);
+        }
+
+        // Плавное закрытие окна
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!_isClosingAnimationCompleted)
+            {
+                e.Cancel = true; // отменяем закрытие, пока не завершится анимация
+
+                DoubleAnimation fadeOutAnimation = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(0.5));
+                fadeOutAnimation.Completed += (s, a) =>
+                {
+                    _isClosingAnimationCompleted = true;
+                    Close(); // вызываем закрытие окна повторно, после завершения анимации
+                };
+
+                BeginAnimation(OpacityProperty, fadeOutAnimation);
+            }
+        }
+
 
         private void ZoomIn_Click(object sender, RoutedEventArgs e)
         {

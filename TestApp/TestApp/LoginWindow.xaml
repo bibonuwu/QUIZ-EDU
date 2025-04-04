@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestApp"
          mc:Ignorable="d" x:Name="home" 
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
  Title="MainWindow" Height="619" Width="870"
  WindowStartupLocation="CenterScreen" WindowStyle="None"
+         Opacity="0"
+        Closing="Window_Closing"
+
+        Loaded="Window_Loaded"
  Background="Transparent" AllowsTransparency="True"
  ResizeMode="NoResize" WindowState="Normal">
     <Border CornerRadius="10" Background="{DynamicResource PrimaryBackgroundColor}">

@@ -7,6 +7,11 @@
         mc:Ignorable="d"
                 WindowState="Maximized" 
 
+             Opacity="0"
+    Closing="Window_Closing"
+
+    Loaded="Window_Loaded"
+        
      Title="Прохождение теста" WindowStartupLocation="CenterScreen" WindowStyle="None"
  AllowsTransparency="True"
 ResizeMode="NoResize" Background="{x:Null}">

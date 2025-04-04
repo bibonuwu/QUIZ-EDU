@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
 using TestApp;
 
 namespace TestApp
@@ -16,6 +19,7 @@ namespace TestApp
         private readonly string _userKey;
         private JObject _userStats;
         private Dictionary<string, JObject> _sessions = new Dictionary<string, JObject>();
+        private bool _isClosingAnimationCompleted = false;
 
         public StatsWindow(string userKey)
         {
@@ -47,6 +51,31 @@ namespace TestApp
             if (_sessions.Count > 0)
                 SessionSelector.SelectedIndex = 0;
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation fadeInAnimation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(0.5));
+            BeginAnimation(OpacityProperty, fadeInAnimation);
+        }
+
+        // Плавное закрытие окна
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!_isClosingAnimationCompleted)
+            {
+                e.Cancel = true; // отменяем закрытие, пока не завершится анимация
+
+                DoubleAnimation fadeOutAnimation = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(0.5));
+                fadeOutAnimation.Completed += (s, a) =>
+                {
+                    _isClosingAnimationCompleted = true;
+                    Close(); // вызываем закрытие окна повторно, после завершения анимации
+                };
+
+                BeginAnimation(OpacityProperty, fadeOutAnimation);
+            }
+        }
+
 
         private void SessionSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -138,7 +167,133 @@ namespace TestApp
             StartTimeText.Text = $"Дата начала: —";
             EndTimeText.Text = $"Дата завершения: —";
             DurationText.Text = $"Продолжительность(мин): —";
+
+
+            LoadAnalysisAndTopParticipants();
+
         }
+
+
+        private async void LoadAnalysisAndTopParticipants()
+        {
+            var firebase = new FirebaseClient("https://test-qstem-default-rtdb.firebaseio.com/");
+            var scoresData = await firebase.Child("Score").OnceSingleAsync<JObject>();
+            var usersData = await firebase.Child("users").OnceSingleAsync<JObject>();
+
+            var participantsScores = new List<(string Name, int TotalScore, int CorrectAnswers)>();
+
+            foreach (var participant in scoresData)
+            {
+                int totalScore = 0;
+                int totalCorrectAnswers = 0;
+
+                var participantSessions = participant.Value.ToObject<JObject>();
+
+                foreach (var session in participantSessions)
+                {
+                    var subjects = session.Value.ToObject<JObject>();
+                    foreach (var subject in subjects)
+                    {
+                        var quizzes = subject.Value.ToObject<JObject>();
+                        foreach (var quiz in quizzes)
+                        {
+                            var scoreStr = quiz.Value["Score"]?.ToString()?.Replace(" балл", "") ?? "0";
+                            if (int.TryParse(scoreStr, out int quizScore))
+                                totalScore += quizScore;
+
+                            var questions = quiz.Value["Вопросы"].ToObject<JObject>();
+                            foreach (var q in questions)
+                                if (q.Value.ToString().StartsWith("True"))
+                                    totalCorrectAnswers++;
+                        }
+                    }
+                }
+
+                // Получаем имя и фамилию пользователя из базы users
+                string[] keyParts = participant.Key.Split(' ');
+                string userId = keyParts.Last();
+                string userFullName = participant.Key; // по умолчанию ключ
+
+                foreach (var user in usersData)
+                {
+                    var userInfo = user.Value.ToObject<JObject>();
+                    if (userInfo["Id"]?.ToString() == userId)
+                    {
+                        userFullName = $"{userInfo["firstName"]} {userInfo["lastName"]}";
+                        break;
+                    }
+                }
+
+                participantsScores.Add((userFullName, totalScore, totalCorrectAnswers));
+            }
+
+            var top10 = participantsScores.OrderByDescending(x => x.TotalScore).Take(10).ToList();
+
+            // Очистка и заполнение интерфейса для Топ-10
+            TopParticipantsPanel.Children.Clear();
+            int rank = 1;
+            foreach (var userScore in top10)
+            {
+                var participantBlock = new TextBlock
+                {
+                    Text = $"{rank++}. {userScore.Name} — {userScore.TotalScore}/140",
+                    FontFamily = new System.Windows.Media.FontFamily("MontserratMedium"),
+                    Margin = new Thickness(0, 2, 0, 2)
+                };
+
+                TopParticipantsPanel.Children.Add(participantBlock);
+            }
+
+            // Анализ по теме (остается без изменений)
+            if (_sessions.Count > 0)
+            {
+                string currentSession = SessionSelector.SelectedItem.ToString();
+                JObject sessionData = _sessions[currentSession];
+
+                TopicAnalysisPanel.Children.Clear();
+
+                foreach (var subject in sessionData)
+                {
+                    int correct = 0, totalQuestions = 0;
+                    foreach (var test in subject.Value.ToObject<JObject>())
+                    {
+                        var questions = test.Value["Вопросы"].ToObject<JObject>();
+                        foreach (var q in questions)
+                        {
+                            totalQuestions++;
+                            if (q.Value.ToString().StartsWith("True"))
+                                correct++;
+                        }
+                    }
+
+                    double percentage = totalQuestions > 0 ? ((double)correct / totalQuestions) * 100 : 0;
+
+                    var subjectLine = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 5, 0, 5) };
+                    subjectLine.Children.Add(new TextBlock
+                    {
+                        Text = subject.Key,
+                        Width = 250,
+                        FontWeight = FontWeights.Bold,
+                        FontFamily = new System.Windows.Media.FontFamily("MontserratMedium"),
+                        FontSize = 16
+                    });
+
+                    var percentageBlock = new TextBlock
+                    {
+                        Text = $"{percentage:F0} %",
+                        FontWeight = FontWeights.Bold,
+                        Background = percentage >= 80 ? Brushes.LightGreen : Brushes.Orange,
+                        Foreground = Brushes.White,
+                        Padding = new Thickness(8, 4, 8, 4),
+                        HorizontalAlignment = HorizontalAlignment.Right
+                    };
+
+                    subjectLine.Children.Add(percentageBlock);
+                    TopicAnalysisPanel.Children.Add(subjectLine);
+                }
+            }
+        }
+
 
         private int CalculateGrade(int correct, int total)
         {

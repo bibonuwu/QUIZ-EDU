@@ -3,6 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Periodic" Height="600" Width="900" WindowStartupLocation="CenterScreen" WindowStyle="None"
 Background="Transparent" AllowsTransparency="True"
+        
+             Opacity="0"
+    Closing="Window_Closing"
+
+    Loaded="Window_Loaded"
+        
 ResizeMode="NoResize" WindowState="Normal">
     <Border CornerRadius="10" Background="{DynamicResource PrimaryBackgroundColor}">
        

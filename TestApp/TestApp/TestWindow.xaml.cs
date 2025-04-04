@@ -11,6 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using Firebase.Database;
 using Firebase.Database.Query;
+using System.Windows.Media.Animation;
 namespace TestApp
 {
     public partial class TestWindow : Window
@@ -22,6 +23,7 @@ namespace TestApp
         private string _currentSubject;
         private Calculator secondWindow; // Храним ссылку на окно
         private Periodic secondWindow1; // Храним ссылку на окно
+        private bool _isClosingAnimationCompleted = false;
 
         public TestWindow(Dictionary<string, string> selectedTests, Dictionary<string, Dictionary<string, QuizData>> quizzes)
         {
@@ -41,6 +43,31 @@ namespace TestApp
             SubjectComboBox.SelectedItem = _currentSubject;
 
             LoadQuestion();
+        }
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation fadeInAnimation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(0.5));
+            BeginAnimation(OpacityProperty, fadeInAnimation);
+        }
+
+        // Плавное закрытие окна
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!_isClosingAnimationCompleted)
+            {
+                e.Cancel = true; // отменяем закрытие, пока не завершится анимация
+
+                DoubleAnimation fadeOutAnimation = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(0.5));
+                fadeOutAnimation.Completed += (s, a) =>
+                {
+                    _isClosingAnimationCompleted = true;
+                    Close(); // вызываем закрытие окна повторно, после завершения анимации
+                };
+
+                BeginAnimation(OpacityProperty, fadeOutAnimation);
+            }
         }
 
 

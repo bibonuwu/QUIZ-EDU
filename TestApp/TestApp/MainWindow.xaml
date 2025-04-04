@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:TestApp"
         mc:Ignorable="d"
          WindowState="Maximized" 
-
-
+    Opacity="0"
+  Loaded="Window_Loaded"
+Closing="Window_Closing"
  WindowStartupLocation="CenterScreen"
          WindowStyle="None"
 Background="Transparent" AllowsTransparency="True"
@@ -34,39 +35,60 @@ ResizeMode="NoResize"
             </StackPanel>
             <Border CornerRadius="40,40,40,40"  Background="{DynamicResource SecundaryBackgroundColor}" Margin="50,50,50,50">
 
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,30,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse x:Name="InternetEllipse" Width="15" Height="15" Fill="Gray" Margin="0,0,5,0"/>
+                            <Label FontFamily="{StaticResource MontserratRegular}" Content="Интернет"/>
+                        </StackPanel>
+                      
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse x:Name="FirebaseEllipse" Width="15" Height="15" Fill="Gray" Margin="0,0,5,0"/>
+                            <Label FontFamily="{StaticResource MontserratRegular}"  Content="Деректер қоры"/>
+                        </StackPanel>
+                        <TextBlock  FontFamily="{StaticResource MontserratRegular}" x:Name="CheckTimeText" Foreground="Gray"/>
+
+                    </StackPanel>
 
 
 
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                        <StackPanel HorizontalAlignment="Center" Margin="0,0,0,10">
-                            <TextBlock FontFamily="{StaticResource MontserratMedium}" x:Name="lblFullName" FontSize="16" Margin="0,0,0,5"/>
-                            <TextBlock FontFamily="{StaticResource MontserratMedium}" x:Name="lblEmail" FontSize="16"  Margin="0,0,0,5"/>
-                            <TextBlock FontFamily="{StaticResource MontserratMedium}" x:Name="lblPhone" FontSize="16"  Margin="0,0,0,5"/>
+
+
+                        <StackPanel HorizontalAlignment="Center" Margin="0,0,0,20" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20">
+                                <TextBlock FontFamily="{StaticResource MontserratMedium}" FontSize="20" Margin="0,0,5,0">Қош келдің</TextBlock>
+                                <TextBlock FontFamily="{StaticResource MontserratMedium}" x:Name="lblFullName" FontSize="20" Margin="0,0,0,5"/>
+
+                            </StackPanel>
                             <!-- Добавь другие поля, если нужно -->
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                <ItemsControl FontFamily="{StaticResource MontserratMedium}" Name="MainSubjectsList" FontSize="16" />
+                                <Separator  FontSize="16"  FontFamily="{StaticResource MontserratMedium}"  Margin="10,2,10,2" Height="5">
+                                    <Separator.LayoutTransform>
+                                        <RotateTransform Angle="90"/>
+                                    </Separator.LayoutTransform>
+                                </Separator>
+                                <ItemsControl FontSize="16"  FontFamily="{StaticResource MontserratMedium}" Name="AdditionalSubjectsList"/>
+
+                            </StackPanel>
+
+
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-
-                            <ItemsControl FontFamily="{StaticResource MontserratMedium}" Name="MainSubjectsList" FontSize="16" />
-                            <Separator  FontSize="16"  FontFamily="{StaticResource MontserratMedium}"  Margin="10,2,10,2" Height="5">
-                                <Separator.LayoutTransform>
-                                    <RotateTransform Angle="90"/>
-                                </Separator.LayoutTransform>
-                            </Separator>
-                            <ItemsControl FontSize="16"  FontFamily="{StaticResource MontserratMedium}" Name="AdditionalSubjectsList"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0">
+                            <Button Content="Начать тестирование" Click="StartTest_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" />
+                            <Button Content="Моя статистика" Click="OpenStats_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" Margin="10,0,0,0" />
+                            <Button Content="Шығу" Click="Exit_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" Margin="10,0,0,0" />
 
                         </StackPanel>
-
-
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0">
-                        <Button Content="Начать тестирование" Click="StartTest_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" />
-                        <Button Content="Моя статистика" Click="OpenStats_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" Margin="10,0,0,0" />
-                        <Button Content="Шығу" Click="Exit_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" Margin="10,0,0,0" />
-
-                    </StackPanel>
-                </StackPanel>
+                </Grid>
+                
+                
+             
             </Border>
         </Grid>
    

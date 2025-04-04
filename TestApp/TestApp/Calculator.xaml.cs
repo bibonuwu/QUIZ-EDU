@@ -15,6 +15,7 @@ using System;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace TestApp
 {
@@ -23,6 +24,9 @@ namespace TestApp
     /// </summary>
     public partial class Calculator : Window
     {
+
+        private bool _isClosingAnimationCompleted = false;
+
         public Calculator()
         {
             InitializeComponent();
@@ -36,6 +40,31 @@ namespace TestApp
                 AttachButtonHandlersRecursive(rootGrid);
             }
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DoubleAnimation fadeInAnimation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(0.5));
+            BeginAnimation(OpacityProperty, fadeInAnimation);
+        }
+
+        // Плавное закрытие окна
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!_isClosingAnimationCompleted)
+            {
+                e.Cancel = true; // отменяем закрытие, пока не завершится анимация
+
+                DoubleAnimation fadeOutAnimation = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(0.5));
+                fadeOutAnimation.Completed += (s, a) =>
+                {
+                    _isClosingAnimationCompleted = true;
+                    Close(); // вызываем закрытие окна повторно, после завершения анимации
+                };
+
+                BeginAnimation(OpacityProperty, fadeOutAnimation);
+            }
+        }
+
 
         private void AttachButtonHandlersRecursive(Panel panel)
         {

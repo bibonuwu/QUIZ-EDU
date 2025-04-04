@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\bibon\Desktop\TestApp\TestApp\obj\Debug\
+C:\Users\bibon\Desktop\QUIZ EDU\TestApp\TestApp\obj\Debug\
 TestApp
 none
 false
 DEBUG;TRACE
-C:\Users\bibon\Desktop\TestApp\TestApp\App.xaml
+C:\Users\bibon\Desktop\QUIZ EDU\TestApp\TestApp\App.xaml
 12579933445
 
 161338969809
-27-753895328
+272064184730
 assets\Icons\Icons.xaml;Calculator.xaml;LoginWindow.xaml;MainWindow.xaml;Periodic.xaml;RegistrationWindow.xaml;StatsWindow.xaml;styles\ButtonStyle.xaml;styles\RadioButtonStyle.xaml;TestWindow.xaml;themes\DarkTheme.xaml;themes\LightTheme.xaml;
 
 False

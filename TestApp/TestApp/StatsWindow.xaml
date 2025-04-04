@@ -3,6 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Результаты экзамена" 
         WindowState="Maximized" 
+        
+             Opacity="1"
+    Closing="Window_Closing"
+
+    Loaded="Window_Loaded"
+        
          WindowStartupLocation="CenterScreen" WindowStyle="None"
  Background="Transparent" AllowsTransparency="True"
  ResizeMode="NoResize">
@@ -25,6 +31,7 @@
                 </Button>
                 <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
             </StackPanel>
+           
             <Border  Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="40,40,40,40" Margin="50,50,50,50">
                 <StackPanel Margin="40,40,40,40">
                     <Grid Margin="0,0,0,20">
@@ -33,7 +40,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Результаты экзамена" FontSize="24" FontFamily="{StaticResource MontserratBold}" />
+                            <TextBlock Text="Емтихан нәтижелері" FontSize="24" FontFamily="{StaticResource MontserratBold}" />
 
                             <!-- Выбор сессии -->
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20,0,0,0">
@@ -52,28 +59,28 @@ Style="{StaticResource BlueRoundedButton}" Height="36" Width="150" Click="Button
                     <UniformGrid Columns="4" Margin="0,0,0,20" Height="90">
                         <Border Background="#E6E2FF" CornerRadius="10" Margin="5" Padding="15">
                             <Grid>
-                                <TextBlock Text="Общий балл" FontWeight="Bold" Foreground="#8C40EC" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}" />
+                                <TextBlock Text="Жалпы ұпай" FontWeight="Bold" Foreground="#8C40EC" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}" />
                                 <TextBlock x:Name="TotalScoreText" FontSize="24" FontWeight="Bold"  Foreground="#8C40EC" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}"/>
                             </Grid>
                         </Border>
 
                         <Border Background="#D2F4FF" CornerRadius="10" Margin="5" Padding="15">
                             <Grid>
-                                <TextBlock Text="Достижение(%)" FontWeight="Bold" Foreground="#34A5CF" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}" />
+                                <TextBlock Text="Жетістік(%)" FontWeight="Bold" Foreground="#34A5CF" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}" />
                                 <TextBlock x:Name="AchievementText" FontSize="24" FontWeight="Bold" Foreground="#34A5CF" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}"/>
                             </Grid>
                         </Border>
 
                         <Border Background="#D5FEC7" CornerRadius="10" Margin="5" Padding="15">
                             <Grid>
-                                <TextBlock Text="Правильных" FontWeight="Bold" Foreground="#5EB03D"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}"/>
+                                <TextBlock Text="Дұрыс" FontWeight="Bold" Foreground="#5EB03D"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}"/>
                                 <TextBlock x:Name="CorrectAnswersText" FontSize="24" FontWeight="Bold" Foreground="#5EB03D" HorizontalAlignment="Right"  VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}"/>
                             </Grid>
                         </Border>
 
                         <Border Background="#FAD6CE" CornerRadius="10" Margin="5" Padding="15">
                             <Grid>
-                                <TextBlock Text="Неправильных" FontWeight="Bold" Foreground="#C54451"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}"/>
+                                <TextBlock Text="Қате" FontWeight="Bold" Foreground="#C54451"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}"/>
                                 <TextBlock x:Name="IncorrectAnswersText" FontSize="24" FontWeight="Bold" Foreground="#C54451" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="{StaticResource MontserratBold}"/>
                             </Grid>
                         </Border>
@@ -86,7 +93,7 @@ Style="{StaticResource BlueRoundedButton}" Height="36" Width="150" Click="Button
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <!-- Общая информация -->
-                        <GroupBox Header="Общая информация" FontFamily="{StaticResource MontserratBold}" Margin="0,0,20,0" FontSize="18">
+                        <GroupBox Header="Жалпы мәлімет" FontFamily="{StaticResource MontserratBold}" Margin="0,0,20,0" FontSize="18" BorderBrush="#FFC0C9EA">
                             <StackPanel Margin="10">
                                 <TextBlock x:Name="UserNameText" FontFamily="{StaticResource MontserratMedium}" FontSize="16" />
                                 <TextBlock x:Name="ExamNameText" FontFamily="{StaticResource MontserratMedium}"  FontSize="16" />
@@ -97,15 +104,33 @@ Style="{StaticResource BlueRoundedButton}" Height="36" Width="150" Click="Button
                         </GroupBox>
 
                         <!-- Успехи по предметам -->
-                        <GroupBox Header="Показатели успеха по предметам" FontFamily="{StaticResource MontserratBold}"  FontSize="18" Grid.Column="1">
+                        <GroupBox Header="Пәндер бойынша көрсеткіштер" FontFamily="{StaticResource MontserratBold}"  FontSize="18" Grid.Column="1" BorderBrush="#FFC0C9EA">
                             <StackPanel x:Name="SubjectsProgressPanel" Margin="10"/>
                         </GroupBox>
 
                         <!-- Оценки по предметам -->
-                        <GroupBox Header="Оценка по предметам" Grid.Column="2" FontFamily="{StaticResource MontserratBold}"  FontSize="18" Margin="20,0,0,0">
+                        <GroupBox Header="Пән бойынша бағалау" Grid.Column="2" FontFamily="{StaticResource MontserratBold}"  FontSize="18" Margin="20,0,0,0" BorderBrush="#FFC0C9EA">
                             <StackPanel x:Name="SubjectsGradePanel" Margin="10" />
                         </GroupBox>
                     </Grid>
+
+                    <Grid Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Анализ по теме -->
+                        <GroupBox Header="Тақырып бойынша анализ" FontFamily="{StaticResource MontserratBold}" FontSize="18" BorderBrush="#FFC0C9EA" Margin="0,0,20,0">
+                            <StackPanel x:Name="TopicAnalysisPanel" Margin="10"/>
+                        </GroupBox>
+
+                        <!-- Топ 10 участников -->
+                        <GroupBox Header="Топ 10 қатысушы" FontFamily="{StaticResource MontserratBold}" FontSize="18" Grid.Column="1" BorderBrush="#FFC0C9EA">
+                            <StackPanel x:Name="TopParticipantsPanel" Margin="10"/>
+                        </GroupBox>
+
+                    </Grid>
+                 
 
                 </StackPanel>
             </Border>
