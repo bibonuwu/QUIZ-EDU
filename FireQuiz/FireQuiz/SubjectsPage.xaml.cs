@@ -3,93 +3,77 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace FireQuiz
 {
     public partial class SubjectsPage : Page
     {
-        private readonly List<(string Name, string Image)> allSubjects = new List<(string Name, string Image)>
-{
-    ("Оқу сауаттылығы", "pack://application:,,,/subjects/books 2.png"),
-    ("Мат сауаттылық", "pack://application:,,,/subjects/calculator.png"),
-    ("Тарих", "pack://application:,,,/subjects/notebook.png"),
-    ("Физика", "pack://application:,,,/subjects/telescope.png"),
-    ("Биология", "pack://application:,,,/subjects/microscope.png"),
-    ("Матиматика", "pack://application:,,,/subjects/cubes 2.png"),
-    ("Химия", "pack://application:,,,/subjects/flask.png"),
-    ("Информатика", "pack://application:,,,/subjects/computer.png")
-};
-
+        public List<SubjectModel> Subjects { get; set; }
 
         public SubjectsPage(List<string> allowedSubjects = null)
         {
             InitializeComponent();
-            GenerateSubjectCards(allowedSubjects);
+
+            Subjects = new List<SubjectModel>
+            {
+                new SubjectModel("Оқу сауаттылығы", "pack://application:,,,/subjects/books 2.png"),
+                new SubjectModel("Мат сауаттылық", "pack://application:,,,/subjects/calculator.png"),
+                new SubjectModel("Тарих", "pack://application:,,,/subjects/notebook.png"),
+                new SubjectModel("Физика", "pack://application:,,,/subjects/telescope.png"),
+                new SubjectModel("Биология", "pack://application:,,,/subjects/microscope.png"),
+                new SubjectModel("Матиматика", "pack://application:,,,/subjects/cubes 2.png"),
+                new SubjectModel("Химия", "pack://application:,,,/subjects/flask.png"),
+                new SubjectModel("Информатика", "pack://application:,,,/subjects/computer.png")
+            };
+
+            if (allowedSubjects != null)
+                Subjects = Subjects.FindAll(s => allowedSubjects.Contains(s.Name));
+
+            SubjectsControl.ItemsSource = Subjects;
         }
 
-        private void GenerateSubjectCards(List<string> allowedSubjects)
+        private void StatsButton_Click(object sender, RoutedEventArgs e)
         {
-            SubjectsPanel.Children.Clear();
-
-            foreach (var subject in allSubjects)
+            if (sender is Button button && button.DataContext is SubjectModel subject)
             {
-                if (allowedSubjects == null || allowedSubjects.Contains(subject.Name))
-                {
-                    Border card = new Border
-                    {
-                        Width = 300,
-                        Height = 90,
-                        Background = new SolidColorBrush(Color.FromRgb(71, 178, 255)), // Синий фон
-                        CornerRadius = new CornerRadius(10),
-                        Margin = new Thickness(10),
-                        Cursor = Cursors.Hand
-                    };
-
-                    Grid grid = new Grid();
-                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-
-                    TextBlock subjectText = new TextBlock
-                    {
-                        Text = subject.Name,
-                        FontSize = 18,
-                        Foreground = Brushes.White,
-                        FontWeight = FontWeights.Bold,
-                        VerticalAlignment = VerticalAlignment.Center,
-                        Margin = new Thickness(30, 0, 0, 0)
-                    };
-                    Grid.SetColumn(subjectText, 0);
-
-                    Image subjectImage = new Image
-                    {
-                        Source = new BitmapImage(new Uri(subject.Image, UriKind.Absolute)),
-                        Width = 87,
-                        Height = 87,
-                        Stretch = Stretch.UniformToFill,
-                        VerticalAlignment = VerticalAlignment.Center,
-                        Margin = new Thickness(10)
-                    };
-                    Grid.SetColumn(subjectImage, 1);
-
-                    grid.Children.Add(subjectText);
-                    grid.Children.Add(subjectImage);
-                    card.Child = grid;
-
-                    // Навигация по клику
-                    card.MouseDown += (s, e) =>
-                    {
-                        NavigationService.Navigate(new QuizListPage(subject.Name));
-                    };
-
-                    // Эффект наведения
-                    card.MouseEnter += (s, e) => card.Background = new SolidColorBrush(Color.FromRgb(30, 136, 229));
-                    card.MouseLeave += (s, e) => card.Background = new SolidColorBrush(Color.FromRgb(71, 178, 255));
-
-                    SubjectsPanel.Children.Add(card);
-                }
+                NavigationService.Navigate(new StatisticsPage(subject.Name));
             }
+        }
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LoginPage());
+        }
+
+        private void Card_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Border border && border.DataContext is SubjectModel subject)
+            {
+                NavigationService.Navigate(new QuizListPage(subject.Name));
+            }
+        }
+
+        private void Card_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (sender is Border border)
+                border.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(30, 136, 229));
+        }
+
+        private void Card_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (sender is Border border)
+                border.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(71, 178, 255));
+        }
+    }
+
+    public class SubjectModel
+    {
+        public string Name { get; set; }
+        public string Image { get; set; }
+
+        public SubjectModel(string name, string image)
+        {
+            Name = name;
+            Image = image;
         }
     }
 }

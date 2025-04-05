@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\App.xaml
-71954210173
+131946443607
 
-15-449860720
+171858147865
 135-170198568
-CreateQuestionPage.xaml;CreateQuizPage.xaml;LoginPage.xaml;MainWindow.xaml;QuestionListPage.xaml;QuizListPage.xaml;SubjectsPage.xaml;
+assets\Icons\Icons.xaml;CreateQuestionPage.xaml;CreateQuizPage.xaml;LoginPage.xaml;MainWindow.xaml;QuestionListPage.xaml;QuizListPage.xaml;StatisticsPage.xaml;styles\ButtonStyle.xaml;styles\RadioButtonStyle.xaml;SubjectsPage.xaml;themes\DarkTheme.xaml;themes\LightTheme.xaml;
 
 False
 

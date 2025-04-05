@@ -7,17 +7,25 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="QuestionListPage">
+    <Border CornerRadius="10" Background="{DynamicResource PrimaryBackgroundColor}">
 
-    <Grid>
-        <ListView x:Name="QuestionList"  DisplayMemberPath="Text" Margin="10,10,10,60"/>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10">
-            <Button Content="Back to Quizzes" Click="Back_Click"/>
-            <Button Content="Add Question" Click="AddQuestion_Click"/>
-            <Button Content="Edit Question" Click="EditQuestion_Click"/>
-            <Button Content="Delete Question" Click="DeleteQuestion_Click"/>
-            <Button Content="Save Quiz" Click="SaveQuiz_Click"/>
-            
-        </StackPanel>
-    </Grid>
+        <Border  Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="40,40,40,40" Margin="50,20,50,50" Padding="40,40,40,40">
+
+
+
+
+            <Grid>
+                <ListView FontFamily="{StaticResource MontserratMedium}" x:Name="QuestionList"  DisplayMemberPath="Text" Margin="10,10,10,60" FontSize="18"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10" Height="36">
+                    <Button Style="{StaticResource BlueRoundedButton}" Content="Артқа қайту" Click="Back_Click" Width="150"/>
+                    <Button Style="{StaticResource BlueRoundedButton}" Content="Сұрақ қосу" Click="AddQuestion_Click" Margin="20,0,20,0" Width="150"/>
+                    <Button Style="{StaticResource BlueRoundedButton}" Content="Сұрақты өзгерту" Click="EditQuestion_Click" Width="150"/>
+                    <Button Style="{StaticResource BlueRoundedButton}" Content="Сұрақты өшіру" Click="DeleteQuestion_Click" Margin="20,0,20,0" Width="150"/>
+                    <Button Style="{StaticResource BlueRoundedButton}" Content="Тестті сақтау" Click="SaveQuiz_Click" Width="150"/>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
 
 </Page>

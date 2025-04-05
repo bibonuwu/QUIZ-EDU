@@ -4,16 +4,62 @@
              xmlns:local="clr-namespace:FireQuiz"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Padding" Value="8"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Background" Value="#2196F3"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Cursor" Value="Hand"/>
-        </Style>
-        
-        
-    </Application.Resources>
 
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/themes/LightTheme.xaml"/>
+                <ResourceDictionary Source="/assets/Icons/Icons.xaml"/>
+
+                <ResourceDictionary Source="/styles/RadioButtonStyle.xaml"/>
+                <ResourceDictionary Source="/styles/ButtonStyle.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <FontFamily x:Key="MontserratRegular">pack://application:,,,/Fonts/#Montserrat</FontFamily>
+            <FontFamily x:Key="MontserratMedium">pack://application:,,,/Fonts/#Montserrat Medium</FontFamily>
+            <FontFamily x:Key="MontserratBold">pack://application:,,,/Fonts/#Montserrat Bold</FontFamily>
+
+
+            <!-- Глобальный стиль кнопки -->
+            <Style x:Key="BlueRoundedButton" TargetType="Button">
+                <Setter Property="Background" Value="#3750AC"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="FontFamily" Value="{StaticResource MontserratMedium}"/>
+                <Setter Property="Padding" Value="20,8"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border"
+                               Background="{TemplateBinding Background}"
+                               CornerRadius="4"
+                               SnapsToDevicePixels="True">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"
+                                             RecognizesAccessKey="True"
+                                             TextBlock.Foreground="{TemplateBinding Foreground}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#4D66CC"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#2C4091"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="border" Property="Background" Value="#FFB0B0B0"/>
+                                    <Setter Property="Foreground" Value="#FFEEEEEE"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
 </Application>

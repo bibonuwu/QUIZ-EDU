@@ -7,17 +7,22 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CreateQuizPage">
+    <Border CornerRadius="10" Background="{DynamicResource PrimaryBackgroundColor}">
 
-    <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label FontSize="18">Тест атауын еңгізіңіз</Label>
-            <TextBox x:Name="QuizNameBox" Width="400" Height="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" TextWrapping="Wrap"/>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10">
-                <Button Content="Отмена" Click="Cancel_Click" Margin="5"/>
-                <Button Content="ОК" Click="OK_Click" Margin="5"/>
-            </StackPanel>
-        </StackPanel>
-       
-    </Grid>
+        <Border  Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="40,40,40,40" Margin="50,20,50,50" Padding="40,40,40,40">
 
+
+            <Grid>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label FontFamily="{StaticResource MontserratBold}" FontSize="18" HorizontalAlignment="Center" Margin="0,0,0,20">Тест атауын еңгізіңіз</Label>
+                    <TextBox FontFamily="{StaticResource MontserratMedium}" x:Name="QuizNameBox" Width="400" Height="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" TextWrapping="Wrap"/>
+                    <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+                        <Button Style="{StaticResource BlueRoundedButton}" Content="Отмена" Click="Cancel_Click" Margin="5" Width="150" Height="36"/>
+                        <Button Style="{StaticResource BlueRoundedButton}" Content="ОК" Click="OK_Click" Margin="5" Width="150"/>
+                    </StackPanel>
+                </StackPanel>
+
+            </Grid>
+        </Border>
+    </Border>
 </Page>

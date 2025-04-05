@@ -1,8 +1,97 @@
 ﻿<Page x:Class="FireQuiz.SubjectsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="clr-namespace:FireQuiz"
       Title="SubjectsPage">
-    <Grid>
-        <WrapPanel x:Name="SubjectsPanel" HorizontalAlignment="Center" Margin="20" />
+
+    <Page.Resources>
+        <!-- Шаблон для одного предмета -->
+        <DataTemplate x:Key="SubjectCardTemplate">
+            <Border Width="300"
+                    Height="200"
+                    Background="#47B2FF"
+                    CornerRadius="10"
+                    Margin="10"
+                    Cursor="Hand"
+                    MouseDown="Card_MouseDown"
+                    MouseEnter="Card_MouseEnter"
+                    MouseLeave="Card_MouseLeave">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="{Binding Name}"
+                               FontSize="18"
+                               FontFamily="{StaticResource MontserratBold}"
+                               Foreground="White"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="10,10,10,0"/>
+
+                    <Image Source="{Binding Image}"
+                           Width="87"
+                           Height="87"
+                           Stretch="UniformToFill"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="10"
+                           Grid.Row="1"/>
+
+                    <Button Content="Статистика"
+                            Width="150"
+                            Height="36"
+                            Margin="10"
+                            Grid.Row="2"
+                            Click="StatsButton_Click"
+                            Style="{StaticResource BlueRoundedButton}"/>
+                </Grid>
+            </Border>
+           
+        </DataTemplate>
+    </Page.Resources>
+
+    <Border  Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="40,40,40,40" Margin="50,20,50,50">
+        
+        
+
+
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <!-- 🔵 Кнопка входа -->
+            <Button Content="Войти"
+     Width="100"
+     Height="35"
+     HorizontalAlignment="Right"
+     Click="LoginButton_Click"
+     Style="{StaticResource BlueRoundedButton}" Margin="0,40,40,0" />
+            <StackPanel HorizontalAlignment="Center">
+                <Label FontSize="24" FontFamily="{StaticResource MontserratBold}" HorizontalAlignment="Center">Қош келдіңіз Ұстаз!</Label>
+
+                <Label FontSize="20" FontFamily="{StaticResource MontserratMedium}">Төмендегі батырманы басып тест құрай аласыз!</Label>
+            </StackPanel>
+        
+        </StackPanel>
+       
+        
+
+        <!-- 🔷 Карточки предметов -->
+        <ItemsControl x:Name="SubjectsControl" 
+                  Grid.Row="1"
+                  ItemTemplate="{StaticResource SubjectCardTemplate}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Center" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
     </Grid>
+    </Border>
 </Page>

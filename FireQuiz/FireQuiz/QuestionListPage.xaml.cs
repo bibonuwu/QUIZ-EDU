@@ -18,13 +18,13 @@ namespace FireQuiz
 
         private async void Back_Click(object sender, RoutedEventArgs e)
         {
-            var result = MessageBox.Show("Хотите сохранить тест перед выходом?", "Подтверждение",
+            var result = MessageBox.Show("Сақтағыңыз келеме?", "Иә",
                                          MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
             {
                 await FirebaseHelper.SaveQuiz(quiz);
-                MessageBox.Show("Тест успешно сохранён!");
+                MessageBox.Show("Тест базаға сақталды!");
                 NavigationService.Navigate(new SubjectsPage());
 
             }
@@ -44,7 +44,7 @@ namespace FireQuiz
             if (QuestionList.SelectedItem is Question selectedQuestion)
                 NavigationService.Navigate(new CreateQuestionPage(quiz, selectedQuestion));
             else
-                MessageBox.Show("Выберите вопрос для редактирования!");
+                MessageBox.Show("Өзгерту үшін сұрақты таңдаңыз!");
         }
 
         private void DeleteQuestion_Click(object sender, RoutedEventArgs e)
@@ -55,7 +55,7 @@ namespace FireQuiz
                 QuestionList.Items.Refresh();
             }
             else
-                MessageBox.Show("Выберите вопрос для удаления!");
+                MessageBox.Show("Өшіру үшін сұрақты таңдаңыз!");
         }
 
         private async void SaveQuiz_Click(object sender, RoutedEventArgs e)
@@ -63,7 +63,7 @@ namespace FireQuiz
             try
             {
                 await FirebaseHelper.SaveQuiz(quiz);
-                MessageBox.Show("Тест успешно сохранён в базе!");
+                MessageBox.Show("Тест базаға сақталды!");
             }
             catch (Exception ex)
             {

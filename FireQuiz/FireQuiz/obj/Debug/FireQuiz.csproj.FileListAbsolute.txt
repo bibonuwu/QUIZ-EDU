@@ -148,3 +148,10 @@ C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\FireQuiz.csproj.Core
 C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\FireQuiz.csproj.Up2Date
 C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\FireQuiz.exe
 C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\FireQuiz.pdb
+C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\StatisticsPage.baml
+C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\StatisticsPage.g.cs
+C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\assets\Icons\Icons.baml
+C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\styles\ButtonStyle.baml
+C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\styles\RadioButtonStyle.baml
+C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\themes\DarkTheme.baml
+C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\themes\LightTheme.baml

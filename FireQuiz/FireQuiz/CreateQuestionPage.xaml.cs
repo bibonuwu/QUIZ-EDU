@@ -46,24 +46,24 @@ namespace FireQuiz
             {
                 StackPanel stack = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(5) };
 
-                TextBox answerText = new TextBox { Width = 250, Margin = new Thickness(5) };
+                TextBox answerText = new TextBox { Width = 250, Margin = new Thickness(10), VerticalAlignment = VerticalAlignment };
                 CheckBox isCorrect = new CheckBox { Content = "Правильный", Margin = new Thickness(5) };
 
                 // Контейнер для изображения
                 Border imageBorder = new Border
                 {
-                    Width = 60,
-                    Height = 60,
-                    BorderThickness = new Thickness(2),
+                    Width = 100,
+                    Height = 100,
+                    BorderThickness = new Thickness(20),
                     BorderBrush = Brushes.Gray, // Начальный цвет
-                    Margin = new Thickness(5),
+                    Margin = new Thickness(10),
                     Tag = i
                 };
 
                 Image imageBox = new Image
                 {
-                    Width = 50,
-                    Height = 50,
+                    Width = 100,
+                    Height = 100,
                     Stretch = Stretch.UniformToFill
                 };
 

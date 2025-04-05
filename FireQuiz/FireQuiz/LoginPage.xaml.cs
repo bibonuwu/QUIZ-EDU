@@ -91,9 +91,17 @@ namespace FireQuiz
         {
             TextBox currentBox = sender as TextBox;
 
-            if (e.Key == Key.Back) // Если нажали Backspace
+            if (e.Key == Key.Enter)
             {
-                if (currentBox.Text == "") // Если поле уже пустое, перейти на предыдущее
+                // Нажат Enter — запускаем вход
+                Submit_Click(null, null);
+                e.Handled = true;
+                return;
+            }
+
+            if (e.Key == Key.Back)
+            {
+                if (currentBox.Text == "")
                 {
                     if (currentBox == Box2) { Box1.Focus(); Box1.Clear(); }
                     else if (currentBox == Box3) { Box2.Focus(); Box2.Clear(); }
@@ -101,12 +109,13 @@ namespace FireQuiz
                 }
                 else
                 {
-                    currentBox.Clear(); // Очищаем текущее поле
+                    currentBox.Clear();
                 }
 
-                e.Handled = true; // Запрещаем стандартное поведение Backspace
+                e.Handled = true;
             }
         }
+
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {

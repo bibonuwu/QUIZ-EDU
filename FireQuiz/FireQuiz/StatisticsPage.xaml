@@ -1,0 +1,69 @@
+﻿<Page x:Class="FireQuiz.StatisticsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Статистика учеников">
+    <Border CornerRadius="10" Background="{DynamicResource PrimaryBackgroundColor}">
+        <Border  Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="40,40,40,40" Margin="50,20,50,50">
+            
+     
+
+            <Grid Margin="20">
+        <StackPanel>
+
+            <!-- Заголовок -->
+            <TextBlock Text="Статистика учеников"
+                       FontFamily="{StaticResource MontserratBold}"
+                       FontSize="24"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+            <!-- Фильтры по дате -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <TextBlock  FontFamily="{StaticResource MontserratMedium}" Text="От:" VerticalAlignment="Center" Margin="5"/>
+                    <DatePicker  FontFamily="{StaticResource MontserratMedium}" x:Name="FromDatePicker" Width="150" Margin="5"/>
+
+                    <TextBlock  FontFamily="{StaticResource MontserratMedium}" Text="До:" VerticalAlignment="Center" Margin="5"/>
+                    <DatePicker  FontFamily="{StaticResource MontserratMedium}" x:Name="ToDatePicker" Width="150" Margin="5"/>
+
+                <Button Content="Показать"
+                        Style="{StaticResource BlueRoundedButton}" Height="36"
+                        Click="ShowStats_Click"
+                        Width="100"
+                        Margin="10,0,0,0"
+                   />
+
+                        <Button Content="← Назад"
+        Style="{StaticResource BlueRoundedButton}"
+        Width="100"
+        Height="36"
+        Click="BackButton_Click" Margin="15,0,0,0"/>
+                    </StackPanel>
+
+            <!-- Таблица -->
+                <DataGrid  FontFamily="{StaticResource MontserratMedium}" x:Name="StatsDataGrid"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      Margin="0,10,0,0"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="Horizontal"
+                      RowHeight="30"
+                      FontSize="14"
+                      Background="White"
+                      BorderThickness="1"
+                      BorderBrush="#CCC">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Ученик" Binding="{Binding Ученик}" Width="*"/>
+                    <DataGridTextColumn Header="Класс" Binding="{Binding Класс}" Width="*"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Дата}" Width="*"/>
+                    <DataGridTextColumn Header="Тест" Binding="{Binding Тест}" Width="*"/>
+                    <DataGridTextColumn Header="Баллы" Binding="{Binding Баллы}" Width="*"/>
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+        </Border>
+    </Border>
+</Page>
