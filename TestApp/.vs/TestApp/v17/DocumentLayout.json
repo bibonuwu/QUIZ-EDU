@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|c:\\users\\bibon\\desktop\\quiz edu\\testapp\\testapp\\statswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\statswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|c:\\users\\bibon\\desktop\\quiz edu\\testapp\\testapp\\testwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\testwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\testapp\\statswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\statswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|c:\\users\\bibon\\desktop\\quiz edu\\testapp\\testapp\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\testapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\testapp\\testwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EE4D0FF-03D3-4278-8B3F-B5361B832E77}|TestApp\\TestApp.csproj|solutionrelative:testapp\\testwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,55 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\LoginWindow.xaml",
-              "RelativeDocumentMoniker": "TestApp\\LoginWindow.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\LoginWindow.xaml",
-              "RelativeToolTip": "TestApp\\LoginWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-05T11:31:48.193Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\App.xaml",
-              "RelativeDocumentMoniker": "TestApp\\App.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\App.xaml",
-              "RelativeToolTip": "TestApp\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-05T07:28:52.066Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StatsWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\StatsWindow.xaml.cs",
-              "RelativeDocumentMoniker": "TestApp\\StatsWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\StatsWindow.xaml.cs",
-              "RelativeToolTip": "TestApp\\StatsWindow.xaml.cs",
-              "ViewState": "AgIAABIBAAAAAAAAAAAkwE4BAAAAAAAAAAAAAA==",
+              "Title": "TestWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\TestWindow.xaml.cs",
+              "RelativeDocumentMoniker": "TestApp\\TestWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\TestWindow.xaml.cs",
+              "RelativeToolTip": "TestApp\\TestWindow.xaml.cs",
+              "ViewState": "AgIAAGYBAAAAAAAAAAAmwIABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T17:26:15.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T14:51:21.657Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StatsWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\StatsWindow.xaml",
-              "RelativeDocumentMoniker": "TestApp\\StatsWindow.xaml",
-              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\StatsWindow.xaml",
-              "RelativeToolTip": "TestApp\\StatsWindow.xaml",
+              "Title": "TestWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\TestWindow.xaml",
+              "RelativeDocumentMoniker": "TestApp\\TestWindow.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\TestApp\\TestApp\\TestWindow.xaml",
+              "RelativeToolTip": "TestApp\\TestWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-04T16:10:45.708Z",
+              "WhenOpened": "2025-04-05T14:51:09.101Z",
               "EditorCaption": ""
             }
           ]

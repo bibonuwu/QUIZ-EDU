@@ -207,8 +207,8 @@ namespace TestApp
                 {
                     Content = (i + 1).ToString(),
                     Tag = i,
-                    Width = 40,
-                    Height = 35,
+                    Width = 50,
+                    Height = 45,
                     FontFamily = (FontFamily)FindResource("MontserratMedium"),
                     
                     Margin = new Thickness(4),
@@ -371,6 +371,17 @@ namespace TestApp
             this.Close();       // Закрываем текущее окно
         }
 
+        private void EnlargeText_Click(object sender, RoutedEventArgs e)
+        {
+            if (QuestionText.FontSize < 30)
+            {
+                QuestionText.FontSize += 5;
+            }
+            else
+            {
+                QuestionText.FontSize = 15; // Сброс обратно
+            }
+        }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
