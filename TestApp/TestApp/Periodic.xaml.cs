@@ -97,5 +97,23 @@ namespace TestApp
         }
 
 
+
+        private bool isOriginalImage = true;
+
+        private void ChangeImage_Click(object sender, RoutedEventArgs e)
+        {
+            if (isOriginalImage)
+            {
+                zoomImage.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/Solubility.jpg"));
+            }
+            else
+            {
+                zoomImage.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/Periodic.jpg"));
+            }
+
+            isOriginalImage = !isOriginalImage;
+        }
+
+
     }
 }

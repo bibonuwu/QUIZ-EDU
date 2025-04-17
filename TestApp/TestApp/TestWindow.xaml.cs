@@ -112,14 +112,17 @@ namespace TestApp
                     Tag = i,
                     Background = (Brush)new BrushConverter().ConvertFromString("#454F5B"),
                     Style = (Style)FindResource("ModernRadioButtonStyle")
+
                 };
 
                 // Контейнер с буквой и контентом
-                StackPanel contentStack = new StackPanel
+                WrapPanel contentStack = new WrapPanel
                 {
                     Orientation = Orientation.Horizontal,
-                    VerticalAlignment = VerticalAlignment.Center
+                    VerticalAlignment = VerticalAlignment.Center,
+                    MaxWidth = 250 // можно поэкспериментировать
                 };
+
 
                 TextBlock letterBlock = new TextBlock
                 {
@@ -141,19 +144,27 @@ namespace TestApp
                         FontSize = 15,
                         Foreground = (Brush)new BrushConverter().ConvertFromString("#454F5B"),
                         VerticalAlignment = VerticalAlignment.Center,
-                        FontFamily = (FontFamily)FindResource("MontserratMedium")
+                        FontFamily = (FontFamily)FindResource("MontserratMedium"),
+                        TextWrapping = TextWrapping.Wrap,
+                        MaxWidth = 180
                     };
+
                     contentStack.Children.Add(textBlock);
                 }
-                else if (!string.IsNullOrEmpty(answer.ImageUrl))
+
+                if (!string.IsNullOrEmpty(answer.ImageUrl))
                 {
                     Image image = new Image
                     {
                         Source = new BitmapImage(new Uri(answer.ImageUrl)),
-                        Height = 50
+                        Margin = new Thickness(10, 0, 0, 0), // можно оставить, если хочешь отступ
+                        Stretch = Stretch.Uniform // сохраняет пропорции изображения
                     };
+
+
                     contentStack.Children.Add(image);
                 }
+
 
                 radio.Content = contentStack;
 

@@ -3,11 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|c:\\users\\bibon\\desktop\\quiz edu\\firequiz\\firequiz\\statisticspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|c:\\users\\bibon\\desktop\\quiz edu\\firequiz\\firequiz\\createquizpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\createquizpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\firequiz\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\firequiz\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\firequiz\\statisticspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\statisticspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|c:\\users\\bibon\\desktop\\quiz edu\\firequiz\\firequiz\\subjectspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\firequiz\\quizlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\quizlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\firequiz\\subjectspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{460D4B80-E853-4018-8AFB-5A87CF6419BC}|FireQuiz\\FireQuiz.csproj|solutionrelative:firequiz\\subjectspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -23,26 +39,69 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CreateQuizPage.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\CreateQuizPage.xaml",
+              "RelativeDocumentMoniker": "FireQuiz\\CreateQuizPage.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\CreateQuizPage.xaml",
+              "RelativeToolTip": "FireQuiz\\CreateQuizPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-07T19:08:36.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "QuizListPage.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\QuizListPage.xaml",
+              "RelativeDocumentMoniker": "FireQuiz\\QuizListPage.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\QuizListPage.xaml",
+              "RelativeToolTip": "FireQuiz\\QuizListPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-07T19:08:27.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "FireQuiz\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\LoginPage.xaml",
+              "RelativeToolTip": "FireQuiz\\LoginPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-07T17:25:04.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "FireQuiz\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\MainWindow.xaml",
+              "RelativeToolTip": "FireQuiz\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-06T17:50:38.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "StatisticsPage.xaml",
               "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\StatisticsPage.xaml",
               "RelativeDocumentMoniker": "FireQuiz\\StatisticsPage.xaml",
               "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\StatisticsPage.xaml",
               "RelativeToolTip": "FireQuiz\\StatisticsPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-05T12:26:00.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T12:26:00.658Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "SubjectsPage.xaml",
               "DocumentMoniker": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\SubjectsPage.xaml",
               "RelativeDocumentMoniker": "FireQuiz\\SubjectsPage.xaml",
               "ToolTip": "C:\\Users\\bibon\\Desktop\\QUIZ EDU\\FireQuiz\\FireQuiz\\SubjectsPage.xaml",
               "RelativeToolTip": "FireQuiz\\SubjectsPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-05T12:25:55.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T12:25:55.376Z"
             }
           ]
         }

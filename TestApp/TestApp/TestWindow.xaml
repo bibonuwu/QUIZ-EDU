@@ -166,8 +166,11 @@ Click="EnlargeText_Click"
                                     </Border>
                                     <StackPanel Grid.Column="2" Margin="20,20,20,20">
                                         <Label FontFamily="{StaticResource MontserratMedium}" FontSize="14" Foreground="#FF6D7B8D">Жауабы</Label>
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="400">
                                         <StackPanel x:Name="AnswersPanel" />
-                                    </StackPanel>
+                                    </ScrollViewer>
+
+                                </StackPanel>
                                 </Grid>
 
                             </Border>

@@ -5,22 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestApp"
         mc:Ignorable="d"
-               MouseLeftButtonDown="Window_MouseLeftButtonDown"
-        Title="RegistrationWindow" Height="619" Width="870"
-           Opacity="0"
-        Closing="Window_Closing"
-
+        Title="RegistrationWindow"
+        Height="619" Width="870"
+        Opacity="1"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowState="Normal"
         Loaded="Window_Loaded"
- WindowStartupLocation="CenterScreen" WindowStyle="None"
- Background="Transparent" AllowsTransparency="True"
- ResizeMode="NoResize" WindowState="Normal">
+        Closing="Window_Closing"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
     <Border CornerRadius="10" Background="{DynamicResource PrimaryBackgroundColor}">
         <Grid>
+
+            <!-- Верхние кнопки управления -->
             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
                 <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
-                <Button x:Name="btnRestore" Margin="5 0" Click="btnRestore_Click">
+                <Button x:Name="btnRestore" Margin="5,0" Click="btnRestore_Click">
                     <Button.Style>
-                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonsStyle}">
+                        <Style TargetType="Button" BasedOn="{StaticResource IconButtonsStyle}">
                             <Setter Property="Content" Value="{DynamicResource maximize}"/>
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}" Value="Maximized">
@@ -30,50 +36,39 @@
                         </Style>
                     </Button.Style>
                 </Button>
-                <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
+                <Button x:Name="btnMinimize" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
             </StackPanel>
-            <Border CornerRadius="40,40,40,40"  Background="{DynamicResource SecundaryBackgroundColor}" Margin="50,50,50,50">
+
+            <!-- Форма регистрации -->
+            <Border CornerRadius="40" Background="{DynamicResource SecundaryBackgroundColor}" Margin="50">
                 <StackPanel Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                    <Image Source="/logocenter.png" Width="200" Margin="0,0,0,10" />
-                    <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" HorizontalAlignment="Center">
-                        Жаңа аккаунт құрыңыз
-                    </Label>
+                    <Image Source="/logocenter.png" Width="200" Margin="0,0,0,10"/>
+                    <Label Content="Жаңа аккаунт құрыңыз" FontFamily="{StaticResource MontserratMedium}" FontSize="16" HorizontalAlignment="Center"/>
 
-
+                    <!-- Поля: имя, email, фамилия, телефон -->
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <StackPanel Margin="0,0,10,0">
-                            <StackPanel>
-                                <Label  FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Аты:"/>
-                                <TextBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="txtFirstName"/>
-                            </StackPanel>
 
-                            <StackPanel Grid.Column="1">
-                                <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Электронды почта:"/>
-                                <TextBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="txtEmail"/>
-                            </StackPanel>
+                        <StackPanel Margin="0,0,10,0">
+                            <Label Content="Аты:" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <TextBox x:Name="txtFirstName" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <Label Content="Электронды почта:" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <TextBox x:Name="txtEmail" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Margin="10,0,0,0">
-
-                            <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Жөні:"/>
-                            <TextBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="txtLastName"/>
-
-                            <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Телефон:"/>
-                            <TextBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="txtPhone"/>
+                            <Label Content="Жөні:" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <TextBox x:Name="txtLastName" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <Label Content="Телефон:" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <TextBox x:Name="txtPhone" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
                         </StackPanel>
                     </Grid>
 
-
-
-
-
-
-
+                    <!-- Область, район, школа -->
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -82,24 +77,22 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Margin="0,0,10,0">
-                            <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Облыс:"/>
-                            <ComboBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="cmbRegion">
+                            <Label Content="Облыс:" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <ComboBox x:Name="cmbRegion" FontFamily="{StaticResource MontserratMedium}" FontSize="16">
                                 <ComboBoxItem Content="Қызылорда облысы"/>
-
                             </ComboBox>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Margin="10,0,10,0">
-                            <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Аудан:"/>
-                            <ComboBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="cmbDistrict">
+                            <Label Content="Аудан:" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <ComboBox x:Name="cmbDistrict" FontFamily="{StaticResource MontserratMedium}" FontSize="16">
                                 <ComboBoxItem Content="Қызылорда қаласы"/>
-
                             </ComboBox>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Margin="10,0,0,0">
-                            <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Мектеп:"/>
-                            <ComboBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="cmbSchool">
+                            <Label Content="Мектеп:" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <ComboBox x:Name="cmbSchool" FontFamily="{StaticResource MontserratMedium}" FontSize="16">
                                 <ComboBoxItem Content="№QSTEM school"/>
                                 <ComboBoxItem Content="№12 Гимназия"/>
                                 <ComboBoxItem Content="№15 Лицей"/>
@@ -107,6 +100,7 @@
                         </StackPanel>
                     </Grid>
 
+                    <!-- Сынып, Литерал, Жынысы -->
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -115,18 +109,17 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Margin="0,0,10,0">
-                            <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Сынып:"/>
-                            <ComboBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="cmbGrade">
+                            <Label Content="Сынып:" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <ComboBox x:Name="cmbGrade" FontFamily="{StaticResource MontserratMedium}" FontSize="16">
                                 <ComboBoxItem Content="9"/>
                                 <ComboBoxItem Content="10"/>
                                 <ComboBoxItem Content="11"/>
                             </ComboBox>
-
                         </StackPanel>
-                        <StackPanel Grid.Column="1" Margin="10,0,10,0">
 
-                            <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Литерал:"/>
-                            <ComboBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="cmbLiteral">
+                        <StackPanel Grid.Column="1" Margin="10,0,10,0">
+                            <Label Content="Литерал:" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <ComboBox x:Name="cmbLiteral" FontFamily="{StaticResource MontserratMedium}" FontSize="16">
                                 <ComboBoxItem Content="А"/>
                                 <ComboBoxItem Content="Б"/>
                                 <ComboBoxItem Content="В"/>
@@ -134,33 +127,28 @@
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Margin="10,0,0,0">
-                            <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Жынысы:"/>
-                            <ComboBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="cmbGender">
+                            <Label Content="Жынысы:" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                            <ComboBox x:Name="cmbGender" FontFamily="{StaticResource MontserratMedium}" FontSize="16">
                                 <ComboBoxItem Content="Мужской"/>
                                 <ComboBoxItem Content="Женский"/>
                             </ComboBox>
                         </StackPanel>
                     </Grid>
 
-
-
-
-
-
-
-                    <Label FontFamily="{StaticResource MontserratMedium}" FontSize="16" Content="Құпия сөз:" Margin="0,10,0,0"/>
-                    <PasswordBox FontFamily="{StaticResource MontserratMedium}" FontSize="16" x:Name="txtPassword"/>
+                    <!-- Пароль и кнопка регистрации -->
+                    <Label Content="Құпия сөз:" FontFamily="{StaticResource MontserratMedium}" FontSize="16" Margin="0,10,0,0"/>
+                    <PasswordBox x:Name="txtPassword" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
 
                     <Button Content="Тіркелу" Click="Register_Click" Margin="0,20,0,0" Style="{StaticResource BlueRoundedButton}" Height="35" HorizontalAlignment="Center" Width="200"/>
+
                     <TextBlock Margin="0,10,0,0" FontFamily="{StaticResource MontserratMedium}" FontSize="16">
-<Run Text="Аккаутыңыз бар ма? " />
-<Hyperlink Click="OpenLogin_Click">Кіру</Hyperlink>
+                        <Run Text="Аккаутыңыз бар ма? "/>
+                        <Hyperlink Click="OpenLogin_Click">Кіру</Hyperlink>
                     </TextBlock>
 
                 </StackPanel>
             </Border>
-       
+
         </Grid>
-     
     </Border>
 </Window>

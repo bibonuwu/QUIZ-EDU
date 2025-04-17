@@ -55,7 +55,7 @@ namespace TestApp
 
         private async void CheckStatusAsync()
         {
-            var now = DateTime.Now.ToString("HH:mm:ss");
+            var now = DateTime.Now.ToString("HH:mm");
 
             if (IsInternetAvailable())
             {
@@ -70,7 +70,7 @@ namespace TestApp
                 FirebaseEllipse.Fill = Brushes.Gray;
             }
 
-            CheckTimeText.Text = $"Сағат: {now}";
+            CheckTimeText.Text = $" {now}";
         }
 
 

@@ -5,23 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestApp"
         mc:Ignorable="d"
-         WindowState="Maximized" 
-    Opacity="0"
-  Loaded="Window_Loaded"
-Closing="Window_Closing"
- WindowStartupLocation="CenterScreen"
-         WindowStyle="None"
-Background="Transparent" AllowsTransparency="True"
-ResizeMode="NoResize"
-        
-        Title="Выбор тестов">
+        Title="Выбор тестов"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Opacity="1"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
+
     <Border CornerRadius="10" Background="{DynamicResource PrimaryBackgroundColor}">
         <Grid>
+
+            <!-- Верхние кнопки управления окном -->
             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
                 <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
-                <Button x:Name="btnRestore" Margin="5 0" Click="btnRestore_Click">
+                <Button x:Name="btnRestore" Margin="5,0" Click="btnRestore_Click">
                     <Button.Style>
-                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonsStyle}">
+                        <Style TargetType="Button" BasedOn="{StaticResource IconButtonsStyle}">
                             <Setter Property="Content" Value="{DynamicResource maximize}"/>
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}" Value="Maximized">
@@ -31,66 +34,54 @@ ResizeMode="NoResize"
                         </Style>
                     </Button.Style>
                 </Button>
-                <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
+                <Button x:Name="btnMinimize" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
             </StackPanel>
-            <Border CornerRadius="40,40,40,40"  Background="{DynamicResource SecundaryBackgroundColor}" Margin="50,50,50,50">
 
+            <!-- Основной контент -->
+            <Border CornerRadius="40" Background="{DynamicResource SecundaryBackgroundColor}" Margin="50">
                 <Grid>
+                    <!-- Левый верхний блок: статус и дата -->
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,30,0,0">
+                        <TextBlock x:Name="CheckTimeText" FontFamily="{StaticResource MontserratRegular}" Foreground="Gray" FontSize="20"/>
                         <StackPanel Orientation="Horizontal">
                             <Ellipse x:Name="InternetEllipse" Width="15" Height="15" Fill="Gray" Margin="0,0,5,0"/>
-                            <Label FontFamily="{StaticResource MontserratRegular}" Content="Интернет"/>
+                            <Label Content="Интернет" FontFamily="{StaticResource MontserratRegular}"/>
                         </StackPanel>
-                      
                         <StackPanel Orientation="Horizontal">
                             <Ellipse x:Name="FirebaseEllipse" Width="15" Height="15" Fill="Gray" Margin="0,0,5,0"/>
-                            <Label FontFamily="{StaticResource MontserratRegular}"  Content="Деректер қоры"/>
+                            <Label Content="Деректер қоры" FontFamily="{StaticResource MontserratRegular}"/>
                         </StackPanel>
-                        <TextBlock  FontFamily="{StaticResource MontserratRegular}" x:Name="CheckTimeText" Foreground="Gray"/>
-
                     </StackPanel>
 
-
-
+                    <!-- Центральная часть: приветствие и списки -->
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-
-
-                        <StackPanel HorizontalAlignment="Center" Margin="0,0,0,20" VerticalAlignment="Center">
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20">
-                                <TextBlock FontFamily="{StaticResource MontserratMedium}" FontSize="20" Margin="0,0,5,0">Қош келдің</TextBlock>
-                                <TextBlock FontFamily="{StaticResource MontserratMedium}" x:Name="lblFullName" FontSize="20" Margin="0,0,0,5"/>
-
+                        <StackPanel HorizontalAlignment="Center" Margin="0,0,0,20">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                                <TextBlock Text="Қош келдің" FontFamily="{StaticResource MontserratMedium}" FontSize="20" Margin="0,0,5,0"/>
+                                <TextBlock x:Name="lblFullName" FontFamily="{StaticResource MontserratMedium}" FontSize="20"/>
                             </StackPanel>
-                            <!-- Добавь другие поля, если нужно -->
 
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-
-                                <ItemsControl FontFamily="{StaticResource MontserratMedium}" Name="MainSubjectsList" FontSize="16" />
-                                <Separator  FontSize="16"  FontFamily="{StaticResource MontserratMedium}"  Margin="10,2,10,2" Height="5">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <ItemsControl Name="MainSubjectsList" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
+                                <Separator Margin="10,2" Height="5">
                                     <Separator.LayoutTransform>
                                         <RotateTransform Angle="90"/>
                                     </Separator.LayoutTransform>
                                 </Separator>
-                                <ItemsControl FontSize="16"  FontFamily="{StaticResource MontserratMedium}" Name="AdditionalSubjectsList"/>
-
+                                <ItemsControl Name="AdditionalSubjectsList" FontFamily="{StaticResource MontserratMedium}" FontSize="16"/>
                             </StackPanel>
-
-
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0">
-                            <Button Content="Начать тестирование" Click="StartTest_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" />
-                            <Button Content="Моя статистика" Click="OpenStats_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" Margin="10,0,0,0" />
-                            <Button Content="Шығу" Click="Exit_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" Margin="10,0,0,0" />
 
+                        <!-- Кнопки действий -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                            <Button Content="Тест Бастау" Click="StartTest_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35"/>
+                            <Button Content="Менің статистикам" Click="OpenStats_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" Margin="10,0,0,0"/>
+                            <Button Content="Шығу" Click="Exit_Click" Style="{StaticResource BlueRoundedButton}" Width="200" Height="35" Margin="10,0,0,0"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
-                
-                
-             
             </Border>
+
         </Grid>
-   
     </Border>
 </Window>
