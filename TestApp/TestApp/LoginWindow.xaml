@@ -10,7 +10,7 @@
         Height="619" Width="870"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Opacity="0"
+        Opacity="1"
         Closing="Window_Closing"
         Loaded="Window_Loaded"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"

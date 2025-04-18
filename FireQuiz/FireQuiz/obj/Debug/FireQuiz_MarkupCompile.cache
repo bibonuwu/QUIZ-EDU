@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\obj\Debug\
+C:\Users\bibon\Desktop\QUIZ-EDU\FireQuiz\FireQuiz\obj\Debug\
 FireQuiz
 none
 false
 DEBUG;TRACE
-C:\Users\bibon\Desktop\QUIZ EDU\FireQuiz\FireQuiz\App.xaml
+C:\Users\bibon\Desktop\QUIZ-EDU\FireQuiz\FireQuiz\App.xaml
 131946443607
 
 171858147865
-135-170198568
+135-633360055
 assets\Icons\Icons.xaml;CreateQuestionPage.xaml;CreateQuizPage.xaml;LoginPage.xaml;MainWindow.xaml;QuestionListPage.xaml;QuizListPage.xaml;StatisticsPage.xaml;styles\ButtonStyle.xaml;styles\RadioButtonStyle.xaml;SubjectsPage.xaml;themes\DarkTheme.xaml;themes\LightTheme.xaml;
 
 False

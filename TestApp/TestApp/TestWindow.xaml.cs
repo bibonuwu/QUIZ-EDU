@@ -357,13 +357,11 @@ namespace TestApp
 
             var firebase = new FirebaseClient("https://test-qstem-default-rtdb.firebaseio.com/");
 
-            // Получение текущих тестов за сегодня
             var existingTests = await firebase
                 .Child("Score")
                 .Child(fullNameWithId)
                 .OnceAsync<object>();
 
-            // Считаем, сколько раз уже пройден тест сегодня
             int testNumber = existingTests.Count(x => x.Key.StartsWith(baseDate)) + 1;
 
             string currentDateWithNumber = $"{baseDate} {testNumber}";
@@ -377,10 +375,11 @@ namespace TestApp
             MessageBox.Show("Результаты теста успешно сохранены!");
 
             string key = $"{Session.CurrentUser.firstName} {Session.CurrentUser.lastName} {Session.CurrentUser.Id}";
-            var statsWindow = new StatsWindow(key);
-            statsWindow.Show(); // Используем Show, а не ShowDialog
-            this.Close();       // Закрываем текущее окно
+
+            WindowManager.ShowWindow(() => new StatsWindow(key));
+            this.Close();
         }
+
 
         private void EnlargeText_Click(object sender, RoutedEventArgs e)
         {

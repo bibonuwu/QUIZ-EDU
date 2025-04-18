@@ -1,17 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System;
 using System.Windows;
 
 namespace TestApp
 {
-    /// <summary>
-    /// Логика взаимодействия для App.xaml
-    /// </summary>
     public partial class App : Application
     {
+    }
+
+    public static class WindowManager
+    {
+        private static Dictionary<Type, Window> openWindows = new Dictionary<Type, Window>();
+
+        public static void ShowWindow<T>(Func<T> createWindow) where T : Window
+        {
+            if (openWindows.TryGetValue(typeof(T), out Window existingWindow))
+            {
+                if (existingWindow != null && existingWindow.IsVisible)
+                {
+                    existingWindow.Activate(); // Переносит окно на передний план
+                    return;
+                }
+            }
+
+            var newWindow = createWindow();
+            openWindows[typeof(T)] = newWindow;
+
+            newWindow.Closed += (s, e) => openWindows.Remove(typeof(T));
+            newWindow.Show();
+        }
     }
 }

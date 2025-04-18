@@ -162,23 +162,23 @@ namespace TestApp
                 return;
             }
 
-            var testWindow = new TestWindow(_selectedTests, _quizzes);
-            testWindow.Show();
+            WindowManager.ShowWindow(() => new TestWindow(_selectedTests, _quizzes));
+
             this.Close();
         }
 
         private void OpenStats_Click(object sender, RoutedEventArgs e)
         {
             string key = $"{Session.CurrentUser.firstName} {Session.CurrentUser.lastName} {Session.CurrentUser.Id}";
-            var statsWindow = new StatsWindow(key);
-            statsWindow.Show(); // Используем Show, а не ShowDialog
-            this.Close();       // Закрываем текущее окно
+
+            WindowManager.ShowWindow(() => new StatsWindow(key));
+            this.Close();
         }
+
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow LoginWindow = new LoginWindow();
-            LoginWindow.Show();
+            WindowManager.ShowWindow(() => new LoginWindow());
             this.Close();
         }
 

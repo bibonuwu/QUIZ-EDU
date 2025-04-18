@@ -104,27 +104,26 @@ namespace TestApp
                 grade = cmbGrade.Text,
                 literal = cmbLiteral.Text,
                 gender = cmbGender.Text,
-                password = txtPassword.Password // ← теперь пароль будет в открытом виде!
+                password = txtPassword.Password
             };
 
+            user.Id = Guid.NewGuid().ToString();
 
-            user.Id = Guid.NewGuid().ToString(); // ← Генерация уникального ID
-
-            // теперь пользователь добавится по его имени (firstName)
             await firebase.Child("users").Child(user.Id).PutAsync(user);
 
             MessageBox.Show("Регистрация успешна!");
-            LoginWindow login = new LoginWindow();
-            login.Show();
+
+            WindowManager.ShowWindow(() => new LoginWindow());
             this.Close();
         }
 
+
         private void OpenLogin_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow login = new LoginWindow();
-            login.Show();
+            WindowManager.ShowWindow(() => new LoginWindow());
             this.Close();
         }
+
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

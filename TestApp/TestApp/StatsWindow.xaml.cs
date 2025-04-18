@@ -308,8 +308,7 @@ namespace TestApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(Session.CurrentUser);
-            mainWindow.Show();
+            WindowManager.ShowWindow(() => new MainWindow(Session.CurrentUser));
             this.Close();
         }
 

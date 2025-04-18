@@ -77,7 +77,7 @@ namespace TestApp
             if (matchedUser != null)
             {
                 Session.CurrentUser = matchedUser.Object;
-                new MainWindow(matchedUser.Object).Show();
+                WindowManager.ShowWindow(() => new MainWindow(matchedUser.Object));
                 Close();
             }
             else
