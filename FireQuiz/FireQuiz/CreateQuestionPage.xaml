@@ -3,47 +3,163 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Create Question">
     <Border CornerRadius="10" Background="{DynamicResource PrimaryBackgroundColor}">
-
-        <Border  Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="40,40,40,40" Margin="50,20,50,50" Padding="20,20,20,20">
-
-
+        <Border Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="40" Margin="50,20,50,50" Padding="20">
             <Grid Margin="20">
-                <StackPanel Orientation="Vertical" VerticalAlignment="Top">
-
-                    <TextBlock  FontFamily="{StaticResource MontserratBold}" Text="Cұрақты жазыңыз:" FontSize="18" Margin="0,0,0,5"/>
-
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox x:Name="QuestionText" FontSize="18" Margin="0,0,10,10" Height="100" 
-                 TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                 Width="300"/>
-
-                        <StackPanel Orientation="Vertical">
-                            <Border x:Name="QuestionImageBorder" Width="100" Height="100" BorderThickness="2"
-        BorderBrush="Gray" Margin="5" Background="LightGray"
-        MouseDown="QuestionImageBorder_MouseDown">
-                                <Image x:Name="QuestionImage" Stretch="UniformToFill"/>
-                            </Border>
-
-                            <Button x:Name="DeleteQuestionImageButton" Content="❌ Удалить фото" Click="DeleteQuestionImage_Click" 
-                    Visibility="Collapsed"/>
-                           
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                        <!-- Выбор типа вопроса -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Тип вопроса:" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <ComboBox x:Name="QuestionTypeComboBox" Width="180" SelectionChanged="QuestionTypeComboBox_SelectionChanged">
+                                <ComboBoxItem Content="Обычный тест" IsSelected="True"/>
+                                <ComboBoxItem Content="Сәйкестендіру"/>
+                            </ComboBox>
                         </StackPanel>
 
-                        <TextBlock  FontFamily="{StaticResource MontserratMedium}" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="16">Cуреттті қою үшін: WIN + Shift + S</TextBlock>
+                        <!-- Обычный тест -->
+                        <StackPanel x:Name="StandardTestPanel">
+                            <TextBlock Text="Cұрақты жазыңыз:" FontSize="18" Margin="0,0,0,5"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="QuestionText" FontSize="18" Margin="0,0,10,10" Height="100"
+                                         TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                         Width="300"/>
+                                <StackPanel Orientation="Vertical">
+                                    <Border x:Name="QuestionImageBorder" Width="100" Height="100" BorderThickness="2"
+                                            BorderBrush="Gray" Margin="5" Background="LightGray"
+                                            MouseDown="QuestionImageBorder_MouseDown">
+                                        <Image x:Name="QuestionImage" Stretch="UniformToFill"/>
+                                    </Border>
+                                    <Button x:Name="DeleteQuestionImageButton" Content="❌ Удалить фото" Click="DeleteQuestionImage_Click"
+                                            Visibility="Collapsed"/>
+                                </StackPanel>
+                                <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" FontSize="16">
+                                    Cуреттті қою үшін: WIN + Shift + S
+                                </TextBlock>
+                            </StackPanel>
+
+                            <TextBlock Text="Жауаптар:" FontSize="18" Margin="0,10,0,5"/>
+                            <!-- Ответы -->
+                            <StackPanel Orientation="Horizontal" Margin="5" x:Name="AnswerPanel1">
+                                <Label VerticalAlignment="Center" FontSize="25">a)</Label>
+                                <TextBox x:Name="AnswerTextBox1" Width="250" Margin="0,10,10,10"/>
+                                <CheckBox x:Name="AnswerCheckBox1" Content="Правильный" Margin="5" VerticalAlignment="Center"/>
+                                <Border x:Name="AnswerImageBorder1" Width="100" Height="100" BorderThickness="2"
+                                        BorderBrush="Gray" Margin="10" Background="LightGray"
+                                        MouseDown="AnswerImageBorder_MouseDown">
+                                    <Image x:Name="AnswerImage1" Stretch="UniformToFill"/>
+                                </Border>
+                                <Button x:Name="DeleteAnswerImageButton1" Content="❌" Width="30" Height="30" Click="DeleteAnswerImage_Click" Visibility="Collapsed"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="5" x:Name="AnswerPanel2">
+                                <Label VerticalAlignment="Center" FontSize="25">b)</Label>
+                                <TextBox x:Name="AnswerTextBox2" Width="250" Margin="0,10,10,10"/>
+                                <CheckBox x:Name="AnswerCheckBox2" Content="Правильный" Margin="5" VerticalAlignment="Center"/>
+                                <Border x:Name="AnswerImageBorder2" Width="100" Height="100" BorderThickness="2"
+                                        BorderBrush="Gray" Margin="10" Background="LightGray"
+                                        MouseDown="AnswerImageBorder_MouseDown">
+                                    <Image x:Name="AnswerImage2" Stretch="UniformToFill"/>
+                                </Border>
+                                <Button x:Name="DeleteAnswerImageButton2" Content="❌" Width="30" Height="30" Click="DeleteAnswerImage_Click" Visibility="Collapsed"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="5" x:Name="AnswerPanel3">
+                                <Label VerticalAlignment="Center" FontSize="25">c)</Label>
+                                <TextBox x:Name="AnswerTextBox3" Width="250" Margin="0,10,10,10"/>
+                                <CheckBox x:Name="AnswerCheckBox3" Content="Правильный" Margin="5" VerticalAlignment="Center"/>
+                                <Border x:Name="AnswerImageBorder3" Width="100" Height="100" BorderThickness="2"
+                                        BorderBrush="Gray" Margin="10" Background="LightGray"
+                                        MouseDown="AnswerImageBorder_MouseDown">
+                                    <Image x:Name="AnswerImage3" Stretch="UniformToFill"/>
+                                </Border>
+                                <Button x:Name="DeleteAnswerImageButton3" Content="❌" Width="30" Height="30" Click="DeleteAnswerImage_Click" Visibility="Collapsed"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="5" x:Name="AnswerPanel4">
+                                <Label VerticalAlignment="Center" FontSize="25">d)</Label>
+                                <TextBox x:Name="AnswerTextBox4" Width="250" Margin="0,10,10,10"/>
+                                <CheckBox x:Name="AnswerCheckBox4" Content="Правильный" Margin="5" VerticalAlignment="Center"/>
+                                <Border x:Name="AnswerImageBorder4" Width="100" Height="100" BorderThickness="2"
+                                        BorderBrush="Gray" Margin="10" Background="LightGray"
+                                        MouseDown="AnswerImageBorder_MouseDown">
+                                    <Image x:Name="AnswerImage4" Stretch="UniformToFill"/>
+                                </Border>
+                                <Button x:Name="DeleteAnswerImageButton4" Content="❌" Width="30" Height="30" Click="DeleteAnswerImage_Click" Visibility="Collapsed"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="5" x:Name="AnswerPanel5">
+                                <Label VerticalAlignment="Center" FontSize="25">e)</Label>
+                                <TextBox x:Name="AnswerTextBox5" Width="250" Margin="0,10,10,10"/>
+                                <CheckBox x:Name="AnswerCheckBox5" Content="Правильный" Margin="5"/>
+                                <Border x:Name="AnswerImageBorder5" Width="100" Height="100" BorderThickness="2"
+                                        BorderBrush="Gray" Margin="10" Background="LightGray"
+                                        MouseDown="AnswerImageBorder_MouseDown">
+                                    <Image x:Name="AnswerImage5" Stretch="UniformToFill"/>
+                                </Border>
+                                <Button x:Name="DeleteAnswerImageButton5" Content="❌" Width="30" Height="30" Click="DeleteAnswerImage_Click" Visibility="Collapsed"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                                <Button Content="Сақтау" Click="SaveQuestion_Click" Width="150" Height="36"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!-- Сәйкестендіру (Matching) -->
+                        <StackPanel x:Name="MatchingTestPanel" Visibility="Collapsed">
+                            <TextBlock Text="Главный вопрос" FontWeight="Bold" FontSize="18" Margin="0,0,0,5"/>
+                            <TextBox Text="{Binding MainMatchingQuestion, Mode=TwoWay}" FontSize="18" Height="50" Margin="0,0,0,20"/>
+                            <ItemsControl x:Name="MatchingPairsControl" ItemsSource="{Binding MatchingPairs}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="#333" CornerRadius="30" Margin="0,0,0,20" Padding="20">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="40"/>
+                                                    <ColumnDefinition Width="120"/>
+                                                    <ColumnDefinition Width="20"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="20"/>
+                                                    <ColumnDefinition Width="250"/>
+                                                </Grid.ColumnDefinitions>
+                                                <!-- Буква пары -->
+                                                <TextBlock Grid.Column="0" Text="{Binding PairLetter}" 
+                                                           FontWeight="Bold" FontSize="22" VerticalAlignment="Top" Margin="0,0,5,0"/>
+                                                <!-- Фото -->
+                                                <Border Grid.Column="1" Width="100" Height="100" Background="LightGray" CornerRadius="5"
+        BorderBrush="{Binding BorderBrush}" BorderThickness="2"
+        MouseDown="MatchingImageBorder_MouseDown">
+                                                    <Image Source="{Binding LeftImage}" Stretch="UniformToFill" Width="98" Height="98"/>
+                                                </Border>
+                                                <!-- Вопрос -->
+                                                <TextBox Grid.Column="3" Text="{Binding LeftText, Mode=TwoWay}" FontSize="16" Height="100" VerticalContentAlignment="Center" Margin="0,0,0,0"/>
+                                                <!-- Варианты -->
+                                                <StackPanel Grid.Column="5" Background="#222">
+                                                    <ItemsControl ItemsSource="{Binding Options}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                                                    <!-- Просто выводим "a)", "b)" ... через PairLetter -->
+                                                                    <TextBlock Text="{Binding DataContext.PairLetter, RelativeSource={RelativeSource AncestorType=ItemsControl}}" 
+                           FontWeight="Bold" FontSize="16" Margin="0,0,5,0"/>
+                                                                    <TextBox Text="{Binding ., Mode=TwoWay}" Width="140" Height="32" Margin="0,0,0,0"/>
+                                                                </StackPanel>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                    <Button Content="+" Width="40" Height="40" Margin="0,10,0,0"
+                                                            Click="AddOptionToPair_Click" Tag="{Binding}"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <!-- Кнопка добавить новую пару -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                                <Button Content="+" Width="50" Height="50" Click="AddMatchingPair_Click"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                                <Button Content="Сақтау" Click="SaveMatchingQuestion_Click" Width="150" Height="36"/>
+                            </StackPanel>
+                        </StackPanel>
                     </StackPanel>
-
-                    <TextBlock  FontFamily="{StaticResource MontserratBold}" Text="Жауаптар:" FontSize="18" Margin="0,10,0,5"/>
-                    <WrapPanel x:Name="AnswerPanel" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
-                        <Button Style="{StaticResource BlueRoundedButton}"  Content="Сақтау" Click="SaveQuestion_Click" Width="150" Height="36"/>
-                    </StackPanel>
-
-                </StackPanel>
-
-
+                </ScrollViewer>
             </Grid>
-
         </Border>
     </Border>
 </Page>
